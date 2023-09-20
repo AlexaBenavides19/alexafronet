@@ -218,6 +218,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+
+
+
+
+const url = "https://apinueva-uztn.onrender.com/api/proveedor"
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => mostrarData(data))
+    .catch(error => {
+      console.error('Error al obtener los usuarios:', error);
+    });
+
+  const mostrarData = (data) =>{
+    console.log(data);
+    let body = ''
+    for (let i = 0; i<data.length; i++){
+      body += `<tr><td>${data[i].id}</td>
+      <td>${data[i].nombre}</td>
+      <td>${data[i].telefono}</td>
+      <td>${data[i].correo}</td>
+      <td>${data[i].direccion}</td>
+      <td>${data[i].descrpcion}</td>
+      <td>${data[i].categoria}</td>
+      <td><button type="button" class="remove-button"><i class='bx bxs-trash-alt' ></i></button>
+        <a href="EditarUsuarios.html"><button class="edit-button"><i class='bx bxs-edit-alt'></i></button></td>
+      </tr>`
+    }
+    document.getElementById('table-data').innerHTML = body;
+  }
+
+  
+
   
   
   

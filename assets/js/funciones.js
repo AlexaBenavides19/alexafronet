@@ -1,7 +1,7 @@
 //const url = 'https://backendapi-2t9z.onrender.com/api/usuarios'
 const url = 'https://apinueva-uztn.onrender.com/api/proveedor'
 
-const listarDatos = async() => {
+const listarProveedores = async() => {
     let respuesta = ''
     let body = document.getElementById('contenido')
     //url: Es la url de la api.
@@ -13,13 +13,16 @@ const listarDatos = async() => {
     })
     .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
     .then(function(data) {
-        let listaUsuarios = data.usuarios //Capturar el array devuelto por la api
+        let listaUsuarios = data.proveedores //Capturar el array devuelto por la api
         datos = 
-        listaUsuarios.map(function(usuario) {//Recorrer el array
-            respuesta += `<tr><td>${usuario.nombre}</td>`+
-            `<td>${usuario.rol}</td>`+
-            `<td>${usuario.estado}</td>`+
-            `<td><a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick='editar(${JSON.stringify(usuario)})' >Editar</a> <a class="waves-effect waves-light btn modal-danger deep-orange darken-4" href='#' onclick='eliminar("${usuario._id}")'>Eliminar</a></td>`+
+        listaUsuarios.map(function(proveedor) {//Recorrer el array
+            respuesta += `<tr><td>${proveedor.nombre}</td>`+
+            `<td>${proveedor.telefono}</td>`+
+            `<td>${proveedor.correo}</td>`+
+            `<td>${proveedor.direccion}</td>`+
+            `<td>${proveedor.tipodeproducto}</td>`+
+            `<td>${proveedor.descripcion}</td>`+
+            `<td><a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick='editar(${JSON.stringify(usuario)})' >Editar</a> <a class="waves-effect waves-light btn modal-danger deep-orange darken-4" href='#' onclick='eliminar("${proveedor._id}")'>Eliminar</a></td>`+
             `</tr>`
             body.innerHTML = respuesta
         })
@@ -28,24 +31,35 @@ const listarDatos = async() => {
 
 const registrar = async()=>{
     let _nombre = document.getElementById('nombre').value
-    let _email = document.getElementById('email').value
-    let _pass = document.getElementById('pass').value
-    let _confirmPass = document.getElementById('confirmPass').value
-    let _rol = document.getElementById('rol').value
+    let _telefono = document.getElementById('telefono').value
+    let _correo = document.getElementById('correo').value
+    let _direccion = document.getElementById('direccion').value
+    let _tipodeproducto = document.getElementById('tipodeproducto').value
+    let _descripcion = document.getElementById('descripcion').value
     let _estado = document.getElementById('estado').value
-     if((_pass.length>0 && _confirmPass.length>0) && (_pass == _confirmPass)){
-        let usuario = {
+    if (
+        nombre === '' ||
+        telefono === '' ||
+        correo === '' ||
+        direccion === '' ||
+        tipoDeProducto === '' ||
+        descripcion === '' ||
+        estado === ''
+      ){
+        let proveedor = {
             nombre:_nombre,
-            email: _email,
-            password:_pass,
-            rol:_rol,
+            telefono: _telefono,
+            correo:_correo,
+            direccion:_direccion,
+            tipodeproducto:_tipodeproducto,
+            descripcion:_descripcion,
             estado:_estado
         }
 
         fetch(url,  {
             method: 'POST',
             mode: 'cors',
-            body: JSON.stringify(usuario),//Convertir el objeto _usuario  a un JSON
+            body: JSON.stringify(proveedor),//Convertir el objeto _usuario  a un JSON
             headers: {"Content-type": "application/json; charset=UTF-8"}
         })
         .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
@@ -64,8 +78,6 @@ const registrar = async()=>{
     else{
         //alert('El password y la confirmación del password no coinciden. Favor corregir.')
         Swal.fire(
-            'El password y la confirmación del password no coinciden. Favor corregir.',
-            '',
             'error'
           )
     }
@@ -73,34 +85,53 @@ const registrar = async()=>{
 
 const editar= (usuario)=>{
     document.getElementById('nombre').value = ''
-    document.getElementById('pass').value = ''
-    document.getElementById('rol').value = ''
+    document.getElementById('telefono').value = ''
+    document.getElementById('correo').value = ''
+    document.getElementById('direccion').value = ''
+    document.getElementById('tipodeproducto').value = ''
+    document.getElementById('descripion').value = ''
     document.getElementById('estado').value = ''
 
-    document.getElementById('nombre').value = usuario.nombre
-    document.getElementById('pass').value = usuario.pass
-    document.getElementById('rol').value = usuario.rol
-    document.getElementById('estado').value = usuario.estado
+    document.getElementById('nombre').value = proveedor.nombre
+    document.getElementById('telefono').value = proveedor.telefono
+    document.getElementById('correo').value = proveedor.correo
+    document.getElementById('direccion').value = proveedor.direccion
+    document.getElementById('tipodeproducto').value = proveedor.tipodeproducto
+    document.getElementById('descripion').value = proveedor.descripcion
+    document.getElementById('estado').value =  proveedor.estado
 }
 
 const actualizar = async()=>{
     let _nombre = document.getElementById('nombre').value
-    let _pass = document.getElementById('pass').value
-    let _confirmPass = document.getElementById('confirmPass').value
-    let _rol = document.getElementById('rol').value
+    let _telefono = document.getElementById('telefono').value
+    let _correo = document.getElementById('correo').value
+    let _direccion = document.getElementById('direccion').value
+    let _tipodeproducto = document.getElementById('tipodeprocto').value
+    let _descripcion = document.getElementById('descripcion').value
     let _estado = document.getElementById('estado').value
-     if((_pass.length>0 && _confirmPass.length>0) && (_pass == _confirmPass)){
-        let usuario = {
+    if (
+        nombre === '' ||
+        telefono === '' ||
+        correo === '' ||
+        direccion === '' ||
+        tipoDeProducto === '' ||
+        descripcion === '' ||
+        estado === ''
+      ){
+        let proveedor = {
             nombre:_nombre,
-            password:_pass,
-            rol:_rol,
+            telefono:_telefono,
+            correo:_correo,
+            direccion:_direccion,
+            tipodeproducto:_tipodeproducto,
+            descripcion:_descripcion,
             estado:_estado
         }
 
         fetch(url,  {
             method: 'PUT',
             mode: 'cors',
-            body: JSON.stringify(usuario),//Convertir el objeto _usuario  a un JSON
+            body: JSON.stringify(proveedor),//Convertir el objeto _usuario  a un JSON
             headers: {"Content-type": "application/json; charset=UTF-8"}
         })
         .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
@@ -109,20 +140,20 @@ const actualizar = async()=>{
         })
     }
     else{
-        alert('El password y la confirmación del password no coinciden. Favor corregir.')
+        alert('error')
     }
 }
 
 const eliminar = (id) =>{
     if(confirm('¿Está seguro de realizar la eliminación') == true){
 
-           let usuario = {
+           let proveedor = {
                 _id: id
             }
            fetch(url,  {
                 method: 'DELETE',
                 mode: 'cors',
-                body: JSON.stringify(usuario),//Convertir el objeto _usuario  a un JSON
+                body: JSON.stringify(proveedor),//Convertir el objeto _usuario  a un JSON
                 headers: {"Content-type": "application/json; charset=UTF-8"}
             })
             .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json

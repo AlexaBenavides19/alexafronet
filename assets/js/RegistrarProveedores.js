@@ -147,6 +147,43 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.getElementById("miFormulario").addEventListener("submit", function (e) {
+  e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+  // Captura los valores de los campos del formulario
+  const nombre = document.getElementById("nombre").value;
+  const telefono = document.getElementById("telefono").value;
+  const correo = document.getElementById("correo").value;
+  const direccion = document.getElementById("direccion").value;
+  const descripcion = document.getElementById("descripcion").value;
+  const categoria = document.getElementById("categoria").value;
+
+  // Crea un objeto con los datos a enviar
+  const data = {
+      "nombre": nombre,
+      "telefono":telefono,
+      "correo": correo,
+      "direccion": direccion,
+      "descripcion" : descripcion,
+      "categoria": categoria
+  };
+
+  // Realiza la solicitud POST a la API
+  fetch("https://apinueva-uztn.onrender.com/api/proveedor", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log("Respuesta de la API:", data);
+  })
+  .catch(error => {
+      console.error("Error al enviar la solicitud:", error);
+  });
+});
 
     
 

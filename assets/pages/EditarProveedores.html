@@ -18,7 +18,7 @@
 
     <title>Editar Proveedor</title>
   </head>
-  <body>
+  <body onload="actualizar()">
     <!-- SIDEBAR -->
     <section id="sidebar">
       <a href="" class="brand">
@@ -191,19 +191,19 @@
 
 					<form class="form-row">
 						<label for="product-name">Nombre:</label>
-						<input type="text" id="product-name" name="product-name" required>
+						<input type="text" id="nombre" name="product-name" required>
             <label for="product-name">Telefono:</label>
-						<input type="text" id="product-name" name="product-name" required>
+						<input type="text" id="telefono" name="product-name" required>
             <label for="product-name"> Correo:</label>
-              <input type="text" id="product-name" name="product-name" required>
+              <input type="text" id="correo" name="product-name" required>
             </form>
             <form class="form-row">
               <label for="product-name">Direccion:</label>
-              <input type="text" id="product-name" name="product-name" required>
+              <input type="text" id="direccion" name="product-name" required>
               <label for="product-name">tipo de producto:</label>
-              <input type="text" id="product-name" name="product-name" required>
+              <input type="text" id="tipodeproducto" name="product-name" required>
 						<label for="product-price">Estado:</label>
-						<select class="estadoSelect"  id="botonEstado">
+						<select class="estadoSelect"  id="estado">
 							<option class="estadoSelect" value="Activate">Activo</option>
 							<option class="estadoSelect" value="Inactivate">Inactivo</option>
 						  </select>
@@ -258,5 +258,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="/assets/js/editarProveedor.js"></script>
+  <script src="/assets/js/funciones.js"></script>
 </body>
 </html>

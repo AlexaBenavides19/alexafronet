@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
     <!-- My CSS -->
-    <link rel="stylesheet" href="/assets/css/registrarProveedor.css" />
+    <link rel="stylesheet" href="/assets/css/RegistrarProveedores.css" />
 
     <title>Registrar Proveedor</title>
   </head>
@@ -182,31 +182,62 @@
 					<div class="head">
 						<h3 id="fondoTitulo" >Registrar</h3>
 					</div >
-
-					<form class="form-row">
-						<label for="product-name">Nombre:</label>
-						<input type="text" id="product-name" name="product-name" required>
-            <label for="product-name">Telefono:</label>
-						<input type="text" id="product-name" name="product-name" required>
-            <label for="product-name"> Correo:</label>
-              <input type="text" id="product-name" name="product-name" required>
-            </form>
-            <form class="form-row">
-              <label for="product-name">Direccion:</label>
-              <input type="text" id="product-name" name="product-name" required>
-              <label for="product-name">tipo de producto:</label>
-              <input type="text" id="product-name" name="product-name" required>
-						<label for="product-price">Estado:</label>
-						<select class="estadoSelect"  id="botonEstado">
-							<option class="estadoSelect" value="Activate">Activo</option>
-							<option class="estadoSelect" value="Inactivate">Inactivo</option>
-						  </select>
-						 
-						</form>
-            <form class="form-row">
-              <label for="product-price">Descripcion:</label>
-              <input type="text" id="product-name" name="product-name" required>
-            </form>
+        
+            <form class="table-data" id="miFormulario">
+          <div class="order">
+              <div class="container">
+                  <div class="container2">
+            <div class="container3">
+                          <label for="nombre">Nombre</label>
+                          <input type="text" id="id" >
+                      </div>
+                      <div class="container3">
+                          <label for="nombre">Telefono</label>
+                          <input type="text" id="nombre" >
+                      </div>
+                  </div>
+                  <div class="container2">
+            <div class="container3">
+                          <label for="correo">Correo</label>
+                          <input type="email" id="correo" >
+                      </div>
+                      <div class="container3">
+                          <label for="contraseña">Direccion</label>
+                          <input type="text" id="contraseña" >
+                      </div>
+                  </div>
+                  <div class="container2">
+            <div class="container3">
+                          <label for="fecha">Descripcion</label>
+                          <input type="text" id="correo" >
+            </div>
+        
+            <div class="container3">
+                      <label for="rol">Categotia de Productos</label>
+                      <select id="rol" >
+                          <option value="">Elegir categoria </option>
+                          <option value="Administrador">Shampoos</option>
+                          <option value="Sub-Admin">Acondicionador</option>
+                          <option value="Empleado">Geles</option>
+                          <option value="Empleado 2">tintes</option>
+                      </select>
+          </div>
+          
+                  </div>
+                  <div class="container3">
+                      <button type="submit">Guardar</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+              
+          
+      </main>
+    </section>
+    <div class="btn-table">
+      <a href="Usuarios.html" class="btn-up"><button class="btn-up">Volver</button></a>
+    </div>
+    </div>
 					
 						<div class="add-categoria">
 							<form id="product-form">
@@ -217,36 +248,6 @@
 					
 			</div>
 
-			
-				<!-- <div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul> 
-				</div> -->
 			</div>
       <a href="/assets/pages/proveedoreAdmin.html"></a>
 
@@ -256,5 +257,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="/assets/js/registrarProveedor.js"></script>
+  <script src="/assets/js/funciones.js"></script>
 </body>
 </html>
