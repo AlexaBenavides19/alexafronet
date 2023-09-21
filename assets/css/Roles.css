@@ -258,7 +258,7 @@ height: 40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: transparent;
+	background: var(--rosa-claro);
 	color: var(--light);
 	font-size: 18px;
 	border: none;
@@ -459,7 +459,13 @@ height: 40px;
 
 .container{
 	background-color: var(--light);
-
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: auto;
+	padding: 15px;
+	border-radius: 20px;
+	height: 77vh;
 }
 
 .img-principal{
@@ -608,6 +614,16 @@ height: 40px;
 }
 /* MAIN */
 /* CONTENT */
+.remove-button{
+	padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+    border-radius: 5px;
+	background-color: red;
+    color: white;
+	margin-right: 10px;
+}
 
 .edit-button{
     padding: 10px;
@@ -619,7 +635,7 @@ height: 40px;
     color: white;
 }
 
-.edit-button:hover{
+.edit-button:hover, .remove-button:hover{
     background-color: transparent;
     color: #000;
     border-radius: 50%; 
@@ -692,99 +708,9 @@ height: 40px;
 	cursor: pointer;
 }
 
-/* .container{
-    display: flex;
-    flex-direction: column;
-} */
-
-.container2{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+.checks{
+    font-size: 30px;
 }
-
-
-
-.container {
-    text-align: center;
-}
-
-.container label {
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-}
-
-
-
-.container3 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.container3 input, select{
-    padding: 11px;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
-.container3 select{
-	width: 180px;
-}
-
-
-.container3 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.container3 button[type="submit"] {
-    background-color: var(--rosa-claro);
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.container3 button[type="submit"]:hover {
-    opacity: .8;
-}
-
-/* Estilos para el contenedor */
-.container4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-  }
-  
-  /* Estilo para el label */
-  .container4 label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  /* Estilo para el select */
-  .container4 select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 30%;
-  }
-  
-  /* Estilo para las opciones del select */
-  .container4 select option {
-    font-size: 16px;
-  }
-  
-
-
 
 
 @media screen and (max-width: 768px) {
@@ -808,7 +734,7 @@ height: 40px;
 
 
 @media screen and (max-width: 576px) {
-	#content nav form .form-input input, select {
+	#content nav form .form-input input {
 		display: none;
 	}
 
@@ -820,11 +746,11 @@ height: 40px;
 		color: var(--dark);
 	}
 
-	#content nav form.show .form-input input, select {
+	#content nav form.show .form-input input {
 		display: block;
 		width: 100%;
 	}
-	#content nav form.show .form-input button, select {
+	#content nav form.show .form-input button {
 		width: 36px;
 		height: 100%;
 		border-radius: 0 36px 36px 0;
@@ -851,8 +777,5 @@ height: 40px;
 		min-width: 420px;
 	}
 }
-
-
-
 
 

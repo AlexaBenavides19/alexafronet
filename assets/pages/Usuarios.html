@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/img/LogoBeautySales.png"
+      type="image/x-icon"
+    />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/assets/css/Usuarios.css" />
+    <title>Productos</title>
+  </head>
+  <body>
+
+    <section id="sidebar">
+      <a href="/Index.html" class="brand">
+        <img src="/assets/img/LogoBeautySales.png" class="img-principal" />
+        <span class="text">Beauty Sales</span>
+      </a>
+      <ul class="side-menu top menu-horizontal">
+        <li >
+          <a href="/Index.html">
+            <i class="bx bx-home-alt-2"></i>
+            <span class="text">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="" class="noDisponible">
+            <i class="bx bx-basket active"></i>
+            <span class="text">Productos</span>
+          </a>
+        
+      </ul>
+     
+    </section>
+	
+	  <section id="content">
+	
+		<nav>
+		  <i class="bx bx-menu"></i>
+		  <a href="Usuarios.html" class="nav-link">Productos</a>
+		  <form action="" id="search-form">
+        <div class="form-input">
+          <input type="search" id="search-input"  placeholder="Buscar..." onkeyup="searchTable()"/>
+          <button type="submit" class="search-btn">
+          <i class="bx bx-search"></i>
+          </button>
+        </div>
+        </form>
+		  <input type="checkbox" id="switch-mode" hidden />
+		  <label for="switch-mode" class="switch-mode"></label>
+		  <a href="Perfil.html" class="profile">
+        <img src="/assets/img/login-icon.svg" alt="" id="avatar-image-preview">
+    </a>
+		</nav>
+  
+		  
+		<main>
+			
+			 <div class="head">
+				<div class="table-data">
+				  <h1>Productos</h1>
+				</div>
+				<div class="btn-table">
+					<a href="RegistrarUsuarios.html" class="btn-up"><button class="btn-up">Crear Producto</button></a>
+				</div>
+			  </div>
+        
+          <div class="table-data">
+            <div class="order">
+              <table class="table" id="table">
+                <thead>
+                  <tr >
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Categoria</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="table-data">
+                </tbody>
+              </table>
+            </div> 
+					  
+				
+		</main>
+	</section>
+	
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="/assets/js/Usuarios.js"></script>
+  <script src="/assets/js/global.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/img/LogoBeautySales.png"
+      type="image/x-icon"
+    />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/assets/css/RegistrarUsuarios.css" />
+
+    <title>Registrar producto</title>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+		<a href="/Index.html" class="brand">
+		  <img src="/assets/img/LogoBeautySales.png" class="img-principal" />
+		  <span class="text">Beauty Sales</span>
+		</a>
+		<ul class="side-menu top menu-horizontal">
+		  <li >
+			<a href="/Index.html">
+			  <i class="bx bx-home-alt-2"></i>
+			  <span class="text">Inicio</span>
+			</a>
+		  </li>
+		  <li>
+			<a href="" class="noDisponible">
+			  <i class="bx bx-basket"></i>
+			  <span class="text">Productos</span>
+			</a>
+		  </li>
+		 
+		</div>
+	  </section>
+	  <!-- CONTENT -->
+	  <section id="content">
+		<!-- NAVBAR -->
+		<nav>
+		  <i class="bx bx-menu"></i>
+		  <a href="Usuarios.html" class="nav-link">Registrar produto</a>
+		  <form action="" id="search-form">
+        <div class="form-input">
+          <button type="submit" class="search-btn">
+          <i class="bx bx-search"></i>
+          </button>
+        </div>
+        </form>
+		  <input type="checkbox" id="switch-mode" hidden />
+		  <label for="switch-mode" class="switch-mode"></label>
+		  <a href="Perfil.html" class="profile">
+            <img src="/assets/img/login-icon.svg" alt="" id="avatar-image-preview">
+        </a>
+		</nav>
+  
+		  <!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			 <!-- BOTON REGISTRAR COMPRA-->
+			 <div class="head">
+				<div class="table-data">
+				  <h1>Crear nuevo producto</h1>
+				</div>
+				<div class="btn-table">
+					<a href="Usuarios.html" class="btn-up"><button class="btn-up">Volver</button></a>
+				</div>
+			  </div>
+        
+          <form class="table-data" id="miFormulario">
+			<div class="order">
+				<div class="container">
+				  <div class="container2">
+					<div class="container3">
+					  <label for="nombre">Id</label>
+					  <input type="text" id="id" >
+					</div>
+					<div class="container3">
+					  <label for="nombre">Nombre</label>
+					  <input type="text" id="nombre">
+					</div>
+				  </div>
+				  <div class="container2">
+					<div class="container3">
+					  <label for="precio">precio</label>
+					  <input type="number" id="precio">
+					</div>
+					<div class="container3">
+					  <label for="cantidad">Cantidad</label>
+					  <input type="number" id="cantidad">
+					</div>
+				  </div>
+				  <div class="container2">
+					<div class="container3">
+					  <label for="categoria">Categoria</label>
+					  <input type="text" id="categoria">
+					</div>
+	  
+					<div class="container3">
+					  <label for="descripcion">Descripcion</label>
+					  <input type="text" id="descripcion">
+					</div>
+					
+				  </div>
+	  
+				  <div class="container3">
+					<button type="submit">Guardar</button>
+				  </div>
+    </form>
+					  
+				
+		</main>
+	</section>
+	
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="/assets/js/RegistrarUsuarios.js"></script>
+	<script src="/assets/js/global.js"></script>
+</body>
+</html>
